@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RLCONTAINER: full
+    ports:
+      - "9941:9941"
+    volumes:
+      - .:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=school_management_system.settings
